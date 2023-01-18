@@ -1,0 +1,328 @@
+document.addEventListener('DOMContentLoaded', function (event) {  // direct placement only, comment out when not placing directly, omit when demoing on a new website  
+  // modal box
+  const boxBackgroundColor = '#FFF'; // string, ex. '#FFF';
+  const boxFont = ''; // string, ex. 'Helvetica, Arial, sans-serif;';
+  const boxMaxWidth = '380px'; // defaults to 370px, string, ex. '370px';
+  const boxFontColor = ''; // string, ex. '#000';
+
+  // image
+  const includeImage = true; // boolean, ex. true (no quotes around true or false)
+  const imageUrl = 'https://olo-images-live.imgix.net/4e/4e5cefa07c474299a523a23723b2bfcb.jpg?auto=format%2Ccompress&q=60&cs=tinysrgb&w=528&h=352&fit=crop&s=0b2b7f529228d77ab32ea0ffedb8ae68'; // string, ex. 'https://order.example.com/image.jpg';
+  const imageAltTxt = 'food image'; // string, ex. 'burger';
+  const imageMaxHeight = '220px;'; // string, ex. '180px';
+
+  // headline 
+  const headline = 'Order Now';
+  const headlineFontSize = '42px'; // string, ex. '64px';
+  const headlineMobileFontSize = '42px'; // string, ex. '56px';
+  const headlineUppercase = false; // boolean, ex. true (no quotes around true or false)
+  const headlineFont = 'luchadoroblique'; // string (defaults to box setting if empty), ex. '"Brixton Lead Vector", sans-serif;';
+  const headlineFontColor = '#fe3b1f'; // string, ex. '#000';
+  const headlineFontWeight = ''; // string, ex. '700';
+
+  // sub headline 
+  const subheadline = 'Save time, order online';
+  const subheadlineFontSize = '18px'; // string, ex. '16px';
+  const subheadlineMobileFontSize = '18px'; // string, ex. '14px';
+  const subheadlineUppercase = false; // boolean, ex. true (no quotes around true or false)
+  const subheadlineFont = '"Tiempos Text",Georgia,Times,serif'; // string (defaults to box setting if empty), ex. '"Brixton Lead Vector", sans-serif;';
+  const subheadlineFontColor = '#000'; // string, ex. '#000';
+  const subheadlineFontWeight = ''; // string, ex. '400';
+
+  // cta buttons 
+  const singleButton = false; // false if two buttons are used, boolean, ex. true (no quotes around true or false) 
+  const doubleBtnOneTxt = 'Delivery'; // string, ex. 'Delivery';
+  const doubleBtnTwoTxt = 'Pickup'; // string, ex. 'Pickup';
+  const singleBtnTxt = 'Order Delivery & Pickup'; // string, ex. 'Order Now';
+  const doubleBtnOneUrl = 'https://order.elpolloloco.com/?delivery=true'; // string, ex. 'https://order.example.com/';
+  const doubleBtnTwoUrl = 'https://order.elpolloloco.com/'; // string, ex. 'https://order.example.com/';
+  const singleBtnUrl = 'https://order.elpolloloco.com/'; // string, ex. 'https://order.example.com/';
+  const btnFontSize = '18px'; // string, ex. '16px';
+  const btnUppercase = true; // boolean, ex. true (no quotes around true or false)
+  const btnFont = 'luchadorregular'; // string (defaults to box setting if empty), ex. '"Brixton Lead Vector", sans-serif;';
+  const btnFontColor = '#FFF'; // string, ex. '#FFF';
+  const btnFontWeight = '500'; // string, ex. '400';
+  const btnBackgroundColor = '#00269a'; // string, .ex '#b11b1e';
+  const btnBorderColor = '#00269a'; // string, .ex '#b11b1e';
+  const btnPadding = '12px 30px;'; // string, ex. 10px 22px;
+  const btnHoverFontColor = '#FFF'; // string, ex. '#FFF';
+  const btnHoverBackgroundColor = '#fe3b1f'; // string, .ex '#769ca3';
+
+  // disclaimer
+  const disclaimer = false; // false if there is no disclaimer, boolean, ex. true (no quotes around true or false) 
+  const disclaimerTxt = '*This is my disclaimer, a very very very very very very very very very long disclaimer'; // string, ex. 'This is my disclaimer';
+  const disclaimerFontSize = '10px'; // string, ex. '7px';
+
+  // single day reoccuring 
+  const isSingleDayReoccuring = false; // false if always on, boolean, ex. true (no quotes around true or false)
+  const daysForSingleDayReoccuring = ['tuesday']; // must be in an array [], values can be 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', string, ex. ['sunday'];, ex. ['sunday','monday'];
+
+  // start and end dates 
+  const startDate = ''; // leave as '' if no start date, string, ex. '05/22/2022';
+  const endDate = ''; // leave as '' if no end date, string, ex. '05/27/2022';
+
+  // page path rules 
+  const excludeContainsPath = ''; // string, ex. '/menu/restaurant/';
+  const includeContainsPath = ''; // string, ex. '/menu/';  
+  const globalRegexPath = '^((?!(career|legal|rewards|apply\=1)).)*$'; // string of global regex, ex. 'menu|locations';
+
+  // create style element
+  const style = document.createElement('style');
+
+  // add CSS styles
+  style.innerHTML = `
+.dwmodal {
+  z-index: 100000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+}
+.dwmodal-box {
+  z-index: 1000;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  ${headlineFontColor ? `color: ${headlineFontColor};` : ''}
+  ${boxFont ? `font-family: ${boxFont};` : ''}
+  ${boxBackgroundColor ? `background-color: ${boxBackgroundColor};` : ''}
+  ${includeImage ? 'padding: 0 0 30px 0;' : 'padding: 25px 0 30px 0;'}
+  width: 85%;
+  ${boxMaxWidth ? `max-width: ${boxMaxWidth};` : 'max-width: 370px;'}
+  border-radius: 10px;
+  /*background-image: linear-gradient(-86deg,#ececec 0,#fff 100%),linear-gradient(14deg,#000 0,#fff 100%);*/
+  /*background-image: url(/wp-content/uploads/2016/08/halftone_white.jpg)!important;
+  background-position: 50%;*/
+  /*background-size: cover;*/
+}
+.dwmodal-image {
+  max-height: ${imageMaxHeight};
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  object-fit: cover;
+  /*object-position: 0% 90%;*/
+}
+.dwmodal-close-button {
+  /*${includeImage ? 'filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(91deg) brightness(101%) contrast(103%);' : ''}*/
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  width: 25px;
+  text-align: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.dwmodal-headline {
+  margin: 15px 2px 0 2px;
+  line-height: 1.1;
+  color: #000;
+  ${headlineFontSize ? `font-size: ${headlineFontSize};` : ''}
+  ${headlineFontColor ? `color: ${headlineFontColor};` : ''}
+  ${headlineFont ? `font-family: ${headlineFont};` : ''}
+  ${headlineUppercase ? 'text-transform: uppercase;' : ''}
+  ${headlineFontWeight ? `font-weight: ${headlineFontWeight};` : ''}
+  letter-spacing: 0px;
+  padding-bottom: 0px;
+}
+.dwmodal-subheadline {
+  margin: -5px 5px 15px 5px;
+  ${subheadlineFontSize ? `font-size: ${subheadlineFontSize};` : ''}
+  ${subheadlineFontColor ? `color: ${subheadlineFontColor};` : ''}
+  ${subheadlineFont ? `font-family: ${subheadlineFont};` : ''}
+  ${subheadlineUppercase ? 'text-transform: uppercase;' : ''}
+  ${subheadlineFontWeight ? `font-weight: ${subheadlineFontWeight};` : ''}
+  /*letter-spacing: 1px;*/
+  /*text-transform: uppercase;*/
+}
+.dwmodal-order-btn {
+  /*width: 150px;*/
+  /*min-height: 40px;*/
+  border-radius: 50px; 
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  ${btnFontSize ? `font-size: ${btnFontSize};` : ''}
+  ${btnFontColor ? `color: ${btnFontColor};` : ''}
+  ${btnFont ? `font-family: ${btnFont};` : ''}
+  ${btnUppercase ? 'text-transform: uppercase;' : ''}
+  ${btnFontWeight ? `font-weight: ${btnFontWeight};` : ''}
+  ${btnBackgroundColor ? `background-color: ${btnBackgroundColor};` : ''}
+  ${btnBorderColor ? `border-color: ${btnBorderColor};` : ''}
+  ${btnPadding ? `padding: ${btnPadding};` : ''}
+  text-decoration: none;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  box-shadow: 0px 3px 10px rgb(0 0 0 / 16%);
+  font-style: italic;
+}
+.dwmodal-order-btn:hover,
+.dwmodal-order-btn:active,
+.dwmodal-order-btn:visited {
+  text-decoration: none;
+}
+.dwmodal-order-btn:hover {
+  ${btnHoverFontColor ? `color: ${btnHoverFontColor};` : ''}
+  ${btnHoverBackgroundColor ? `background-color: ${btnHoverBackgroundColor};` : ''}
+}
+.dwmodal-first-btn {
+  margin-right: 7px;
+}
+.dwmodal-disclaimer {
+  margin: 25px 15px -20px 15px;
+  text-align: left;
+}
+.dwmodal-disclaimer p {
+  ${disclaimerFontSize ? `font-size: ${disclaimerFontSize};` : ''}
+  line-height: 1.2;
+}
+.dwmodal-wrapper {
+  display: flex;
+  justify-content: center;
+}
+.dwmodal-show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
+}
+@media only screen and (max-width: 600px) {
+  .dwmodal-headline {
+    ${headlineMobileFontSize ? `font-size: ${headlineMobileFontSize};` : ''}
+  }
+  .dwmodal-subheadline {
+    ${subheadlineMobileFontSize ? `font-size: ${subheadlineMobileFontSize};` : ''}
+  }
+}
+  `;
+
+  // append the style to the DOM in <head> section
+  document.head.appendChild(style);
+
+  // time checks for single day reoccuring, start date, end date 
+  var inDayRange = false;
+  var inTimeRange = false;
+  const now = new Date();
+
+  if (isSingleDayReoccuring && daysForSingleDayReoccuring) {
+    const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
+    var singleDayReoccuringDayIndexes = [];
+    daysForSingleDayReoccuring.forEach((element) => {
+      console.log(element);
+      singleDayReoccuringDayIndexes.push(days.indexOf(element.toLowerCase()));
+    });
+    const dateDay = now.getDay();
+    if (singleDayReoccuringDayIndexes.includes(dateDay)) {
+      inDayRange = true;
+    } else {
+      inDayRange = false;
+    }
+  } else {
+    inDayRange = true;
+  }
+
+  if (startDate && !endDate) {
+    const startDateDateTime = new Date(startDate);
+    if (now > startDateDateTime) {
+      inTimeRange = true;
+    } else {
+      inTimeRange = false;
+    }
+  } else if (startDate && endDate) {
+    const startDateDateTime = new Date(startDate);
+    const endDateDateTime = new Date(endDate + ' 23:59:00');
+    if (now > startDateDateTime && now < endDateDateTime) {
+      inTimeRange = true;
+    } else {
+      inTimeRange = false;
+    }
+  } else if (!startDate && endDate) {
+    const endDateDateTime = new Date(endDate + ' 23:59:00');
+    if (now < endDateDateTime) {
+      inTimeRange = true;
+    } else {
+      inTimeRange = false;
+    }
+  } else if (!startDate && !endDate) {
+    inTimeRange = true;
+  }
+
+  // page path checks
+
+  const pageHref = window.location.href;
+  var passContainsPagePath = false;
+  var passContainsRegexPath = false;
+
+  if (!excludeContainsPath && !includeContainsPath) {
+    passContainsPagePath = true; 
+  } else if (excludeContainsPath && !includeContainsPath) {
+    passContainsPagePath = !pageHref.includes(excludeContainsPath);
+  } else if (!excludeContainsPath && includeContainsPath) {
+    passContainsPagePath = pageHref.includes(includeContainsPath);
+  } else if (excludeContainsPath && includeContainsPath) {
+    passContainsPagePath = !pageHref.includes(excludeContainsPath) && pageHref.includes(includeContainsPath);
+  }
+
+  if (globalRegexPath) {
+    newGlobalRegexPath = new RegExp(globalRegexPath, 'g');
+    passContainsRegexPath = newGlobalRegexPath.test(pageHref);
+  } else {
+    passContainsRegexPath = true;
+  }
+
+  var body = document.getElementsByTagName("BODY")[0];
+  body.insertAdjacentHTML('afterbegin',
+    `<div class="dwmodal"><div class="dwmodal-box">${includeImage ? `<div><img src="${imageUrl}" alt="${imageAltTxt}" class="dwmodal-image"></img></div><button class="dwmodal-close-button"><img src="https://img.cdn4dd.com/s/managed/consumer/storefront/close.svg" alt="close"></button>` : '<div><button class="dwmodal-close-button"><img src="https://img.cdn4dd.com/s/managed/consumer/storefront/close.svg" alt="close"></button>'}<p class="dwmodal-headline">${headline}</p><p class="dwmodal-subheadline">${subheadline}</p><div class="dwmodal-wrapper">${singleButton ? `<a class="dwmodal-order-btn" href="${singleBtnUrl}">${singleBtnTxt}</a>` : `<a class="dwmodal-order-btn dwmodal-first-btn" href="${doubleBtnOneUrl}">${doubleBtnOneTxt}</a><a class="dwmodal-order-btn" href="${doubleBtnTwoUrl}">${doubleBtnTwoTxt}</a>`}</div>${disclaimer ? `<div class="dwmodal-disclaimer"><p>${disclaimerTxt}</p></div>` : ''}</div></div>`
+  );
+  var modal = document.querySelector(".dwmodal");
+  var closeButton = document.querySelector(".dwmodal-close-button");
+  function toggleModal() {
+    modal.classList.toggle("dwmodal-show-modal");
+    sessionStorage.setItem('modalFired', 'true');
+  }
+  function windowOnClick(event) {
+    if (event.target === modal) {
+      toggleModal();
+    }
+  }
+  closeButton.addEventListener("click", toggleModal);
+  window.addEventListener("click", windowOnClick);
+  if (!sessionStorage.getItem('modalFired') && inTimeRange && inDayRange && passContainsPagePath && passContainsRegexPath) {
+    toggleModal();
+  } 
+
+  // accessibility 
+  const focusableElements = 'button, [href], a, [tabindex]:not([tabindex="-1"])';
+  const firstFocusableElement = modal.querySelectorAll(focusableElements)[0]; // get first element to be focused inside modal
+  const secondFocusableElement = modal.querySelectorAll(focusableElements)[1];
+  const focusableContent = modal.querySelectorAll(focusableElements);
+  const lastFocusableElement = focusableContent[focusableContent.length - 1]; // get last element to be focused inside modal
+
+  document.addEventListener('keydown', function (e) {
+    let isTabPressed = e.key === 'Tab' || e.keyCode === 9;
+    if (!isTabPressed) {
+      return;
+    }
+    if (e.shiftKey) { // if shift key pressed for shift + tab combination
+      if (document.activeElement === firstFocusableElement) {
+        lastFocusableElement.focus(); // add focus for the last focusable element
+        e.preventDefault();
+      }
+    } else { // if tab key is pressed
+      if (document.activeElement === lastFocusableElement) { // if focused has reached to last focusable element then focus first focusable element after pressing tab
+        firstFocusableElement.focus(); // add focus for the first focusable element
+        e.preventDefault();
+      }
+    }
+  });
+
+});
