@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      #nav{
+            width:1500px;
+            height:30px;
+            border:3px solid black;
+            margin:auto;
+            padding:10px 0px;
+            padding-top:20px;
+            display:flex;
+            justify-content:space-evenly;
+            background-color:#00008B;
+            border:none;
+            position:fixed;
+        
+            
+        
+        }
+        #nav>div a{
+            text-decoration:none;
+            color:white;
+            font-size:20px;
+            padding-top:100px;
+        
+        }
+        #nav>div a::after{
+            content:" ";
+            width:0;
+            height:3px;
+            background-color:white;
+            display:block;
+            margin:auto;
+        }
+        #nav>div a:hover::after{
+            width:100%;
+            transition: width 0.1s linear;
+        }
+        #nav>div a:hover{
+            color:antiquewhite;
+        }
+        #nav>div a{
+            font-size:20px;
+            font-style:italic;
+        }
+        #top{
+            width:1500px;
+            height:90px;
+            border:0px solid red;
+            margin:auto;
+            background-color:#F5F5F5;
+        }
+        #family{
+            width:1500px;
+            margin:auto;
+            height:120px;
+            border:0px solid blue;
+            background-color:#F5F5F5;
+            padding-top:100px;
+        }
+        #family h1{
+            color:orangered;
+            text-align:center;
+            font-style:italic;
+            font-size:60px;
+
+        }
+        #chick{
+            width:1500px;
+            height:1000px;
+            border: 0px solid purple;
+            margin:auto;
+            background-color:#F5F5F5;
+        }
+        .grid>div{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+border:0px solid black;
+width:100%;
+margin:auto;
+        }
+        .grid>div>div{
+            width:80%;
+            border:10px solid white;
+            margin:auto;
+        }
+        .grid img{
+            width:100%;
+        }
+        .grid>div h1{text-align:center;
+            font-style:oblique;
+        }
+        .grid>div a {
+            color:black;
+            margin-left:150px;
+            margin-bottom:100px;
+            
+        }
+        #c{
+            border:10px #F5F5F5;
+        }
+        #bot{
+            border:0px solid black;
+            height:800px;
+            width:1500px;
+            margin:auto;
+            background-color:#F5F5F5;
+            border:0px solid black;
+            display:flex;
+            margin:auto;  
+        }
+        #bot>div{
+            
+            height:900px;
+            width:500px;
+            border:0px solid red;
+            
+               
+        }
+        #bot>div h1{
+            margin-top:300px;
+            
+            color:orangered;
+            text-align:center;
+            font-style:italic;
+            font-size:45px;
+            margin-bottom:30px;
+        }
+        #bot>div h3{
+            text-align:center;
+            font-size:20px;
+        }
+        #bot>div>button{
+            margin-left:180px;
+            border-radius:20px;
+            padding-left:20px;
+            padding-right:20px;
+            padding-top:10px;
+            padding-bottom:10px;
+            background-color:#00008B;
+            border:none;
+            margin-top:30px;
+        }
+        #bot>div a{
+        text-decoration:none;
+        color:white;
+        font-style:italic;
+        font-size:20px;
+        }
+        #bot>div>button:hover{
+            background-color:orangered;
+        }
+        
+        
+        #bot>div img{
+            width:300%;
+        }
+       #bot>div h3{
+        text-align:center;
+       }
+    </style>
+</head>
+<body>
+    <div id="nav">
+        <div>
+        <a href="">ALL</a></div>
+    
+        <div><a href="">BURRITOS</a></div>
+        <div><a href="">FAMILY DINNERS</a></div>
+        <div><a href="">CHICKEN MEALS</a></div>
+        <div><a href="">FIRE GRILLED COMBOS</a></div>
+        <div><a href="">TOSTADAS</a></div>
+        <div><a href="">BOWLS</a></div>
+        <div><a href="">POLLO FIT MENU</a></div>
+        <div><a href="">STREET TACOS</a></div>
+    </div>
+    <div id="top">
+    </div>
+    <div id="family">
+        <h1>EXTRAS</h1>
+    </div>
+    <div id="chick">
+    <div class="grid">
+        <div>
+        <div><img src="https://www.elpolloloco.com/content/img/menu/TortillaSoup_M6_2019_761X561.webp">
+            </div>
+        <div><img src="https://www.elpolloloco.com/content/img/menu/GuacamoleChips_M6_2019_761X561.webp">
+        </div>
+        <div>
+            <img src="https://www.elpolloloco.com/content/img/menu/ChickenTacosAlCarbon_M6_2019_761X561.webp"></div>
+            <div id="c"><h1>8PC FAMILY FEAST</h1>
+            <a href="#">Nutrition Info</a></div>
+            
+        <div id="c"><h1>8 PC [CHICKEN ONLY]</h1>
+            <a href="">Nutrition Info</a></div>
+            <div id="c"><h1>8 PC FAMILY DINNER</h1>
+                <a href="#">Nutrition Info</a></div>
+            <div><img src="https://www.elpolloloco.com/content/img/menu/ClassicChickenBurrito2_M6_2019_761X561.webp"></div>
+        <div><img src="https://www.elpolloloco.com/content/img/menu/ClassicChickenBurrito2_M6_2019_761X561.webp"></div>
+        <div><img src="https://www.elpolloloco.com/content/img/menu/ClassicChickenBurrito2_M6_2019_761X561.webp"></div>
+        <div id="c"></div>
+       <div id="c"><h1>12 PC FAMILY DINNER</h1>
+    <a href="#">Nutrition Info</a></div>
+        <div id="c"><h1>16 PC FAMILY DINNER</h1>
+    <a href="#">Nutrition Info</a></div>
+       </div> 
+    </div>
+    </div>
+    </div>
+    <div id="bot">
+        
+        <div><img src="https://www.elpolloloco.com/content/img/order-now_1280.webp"></div>
+        <div>
+        <h1>PERFECT POLLO IS JUST A CLICK AWAY</h1>
+        <h3>Order Online for quick pick up or delivery where</h3>
+        <h3>available</h3>
+            <button><a href="#">ORDER NOW</a></button>
+            </h1>
+        
+        
+    </div>
+    
+    
+</body>
+</html>
