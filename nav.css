@@ -1,15 +1,17 @@
 /* nav-bar */
 nav {
-    position: fixed;
-    width: 1500px;
-    height: 30px;
-    border: 3px none;
+   
+    width: 100%;
+    height: 3%;
+    border: none;
     margin: auto;
     padding: 10px 0px;
     display: flex;
     justify-content: space-evenly;
     background-color: blue;
     z-index: 1000;
+    margin-top: 0px;
+   
 }
 
 nav>div>a {
@@ -22,117 +24,152 @@ nav>div>a {
 /* order */
 
 
-#order{
+#order {
     border:0px solid black;
-    height:800px;
-    width:1500px;
-    margin:auto;
-    background-color:#F5F5F5;
-    border:0px solid black;
-    display:flex;
-    margin:auto;  
-}
-#order>div{
-    
-    height:900px;
-    width:500px;
-    border:0px solid red;
-    
-       
-}
-#order>div h1{
-    margin-top:300px;
-    
-    color:orangered;
-    text-align:center;
-    font-style:italic;
-    font-size:45px;
-}
-#order>div h3{
-  
-    text-align:center;
-    font-size:20px;
-   
-}
-#order>div>button{
-    margin-left:180px;
-    border-radius:0%;
-    padding-left:20px;
-    padding-right:20px;
-    padding-top:10px;
-    padding-bottom:10px;
-    background-color:rgb(64, 0, 255);
-    border:none;
-}
-#order>div a{
-text-decoration:none;
-color:white;
-font-style:italic;
-font-size:20px;
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background-color: #F5F5F5;
+    display: flex;
 
 }
-#order>div>button:hover{
-    background-color:orangered;
+
+#order>div {
+
+    height: 900px;
+    width: 500px;
+    border: 0px solid red;
+
+
 }
-#order>div>button{
+
+#order>div h1 {
+    margin-top: 300px;
+
+    color: orangered;
+    text-align: center;
+    font-style: italic;
+    font-size: 45px;
+}
+
+#order>div h3 {
+
+    text-align: center;
+    font-size: 20px;
+
+}
+
+#order>div>button {
+    margin-left: 180px;
+    border-radius: 0%;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgb(64, 0, 255);
+    border: none;
+}
+
+#order>div a {
+    text-decoration: none;
+    color: white;
+    font-style: italic;
+    font-size: 20px;
+
+}
+
+#order>div>button:hover {
+    background-color: orangered;
+}
+
+#order>div>button {
     border-radius: 20px;
 }
 
-#order>div img{
-    width:300%;
+#order>div img {
+    width: 300%;
 }
-#order>div h3{
-text-align:center;
+
+#order>div h3 {
+    text-align: center;
 
 }
 
 /* mid-secton */
-#family{
-    width:1350px;
-    margin:auto;
-    height:120px;
-    border:0px solid blue;
-    background-color:#F5F5F5;
-    padding-top:100px;
+#bowls {
+    width: 100%;
+    margin: auto;
+    height: 20%;
+    border: 0px solid blue;
+    background-color: #F5F5F5;
+    padding: 10px;
 }
-#family h1{
-    color:orangered;
-    text-align:center;
-    font-style:italic;
-    font-size:60px;
+
+#bowls h1 {
+    color: orangered;
+    text-align: center;
+    font-style: italic;
+    font-size: 60px;
 
 }
-#chick{
-    width:1350px;
-    height:1000px;
+
+#bowls_top {
+    width: 100%;
+    height: 150%;
     border: 0px solid purple;
-    margin:auto;
-    background-color:#F5F5F5;
+    margin: auto;
+    background-color: #F5F5F5;
 }
-.grid>div{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-border:0px solid black;
-width:100%;
-margin:auto;
+
+.top>div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 0px solid black;
+    width: 100%;
+    margin: auto;
 }
-.grid>div>div{
-    width:80%;
-    border:10px solid white;
-    margin:auto;
+
+.top>div>div {
+    width: 80%;
+    border: 10px solid white;
+    margin: auto;
 }
-.grid img{
-    width:100%;
+
+.top img {
+    width: 100%;
 }
-.grid>div h1{text-align:center;
-    font-style:oblique;
+
+.top>div h1 {
+    text-align: center;
+    font-style: oblique;
 }
-.grid>div a {
-    color:black;
-    margin-left:150px;
-    margin-bottom:100px;
-    
+
+.top>div a {
+    color: black;
+    margin-left: 150px;
+    margin-bottom: 0px;
+
 }
-#c{
-    border:10px #F5F5F5;
+
+#c {
+    border: 10px #F5F5F5;
 }
+
+/* screenshot image  */
+#image {
+    background-image: url('image.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 30%;
+    width: 100%;
+    margin: auto;
+    height: 20%;
+    border: 0px solid blue;
+    background-color: #F5F5F5;
+
+}
+/* media query */
+
+
+
+
