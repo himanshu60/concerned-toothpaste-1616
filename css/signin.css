@@ -1,0 +1,145 @@
+#pass{
+    border: none;
+    border-bottom: 1px solid rgb(12, 191, 223);
+    
+}
+#email{
+    border: none;
+    border-bottom: 1px solid rgb(12, 191, 223);
+    
+}
+#pass2{
+    border: none;
+    border-bottom: 1px solid rgb(12, 191, 223);
+    
+}
+span , p{
+    color: #cfc3ca;
+     font-size: 15px;
+      font-weight: 400;
+   }
+h1{
+    font-size: 1.6rem;
+     color: #fff;
+     
+}
+
+body{
+    font-family: NotoSansBold,sans-serif;
+    background: #0f0617;
+
+
+}
+#box {
+    height: 550px;
+    width: 30%;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+
+
+}
+    
+img{
+    border-radius: 50%;
+    margin-top: 20px;
+   
+    margin-left: 15px;
+    
+}
+a{
+    text-decoration: none;
+}
+#box > #or{
+    
+/* background: rgba(129, 4, 4, 0.781); */
+border-radius: 50%;
+height: 30px;
+width: 30px;
+color: #fff;
+box-sizing: border-box;
+margin:auto;
+margin-top: 25px;
+margin-bottom: 35px;
+text-align: center;
+/* margin-left: px; */
+padding: 7px;
+
+}
+input{
+    background-color: transparent;
+    border: none;
+    margin-top: 10px;
+    outline: none;
+    resize: none;
+    color: aqua;
+    margin-left: -180px;
+    width: 350px;
+  
+    margin-left: 10px;
+}
+
+#top{
+    color: #cfc3ca;
+    font-size: 15px;
+      font-weight: 400;
+     margin-left: -180px;
+
+}
+
+#top1{
+    color: #cfc3ca;
+    font-size: 15px;
+      font-weight: 400;
+    margin-right:230px;
+}
+#top2 {
+    color: #cfc3ca;
+    font-size: 15px;
+      font-weight: 400;
+    margin-right:213px;
+
+}
+/* .line {
+    width: 86%;
+    margin: auto;
+    height: 1px;
+    background: red;
+} */
+button{
+    background-color: transparent;
+    width: 200px;
+    text-align: center;
+    color: #cfc3ca;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media all and (min-width:381px) and (max-width:900px){
+    #box {
+        margin: auto;
+        width: 50%;
+    }
+    #box #or {
+        margin: auto;
+        margin-top: 20px;
+    
+        margin-bottom: 10px;
+     }
+     #top{
+        text-align: center;
+     }
+
+    
+    
+}
+@media all and (min-width:50px) and (max-width:380px){
+    #box {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+   
+    
+}
