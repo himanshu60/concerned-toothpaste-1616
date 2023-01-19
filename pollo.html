@@ -5,14 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
    <link rel="stylesheet" href="nav.css">
-       
+       <style>
+          #bowls_top {
+            width: 100%;
+            height: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 30px;
+            margin: auto;
+            padding: 10px;
+            background-color: ivory;
+            margin-bottom: 60px;
+        }
+
+        #bowls_top>div {
+            gap: 50px;
+            margin: auto;
+            padding: 10px;
+        }
+
+        #bowls_top>div>img {
+            width: 90%;
+            height: 60%;
+            margin: auto;
+            padding: 10px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+            border-radius: 10px;
+        }
+
+        #bowls_top>div>h1 {
+            font-style: italic;
+            text-align: center;
+            border: 10px #F5F5F5;
+            border-radius: 10px;
+        }
+
+        #bowls_top>div>a {
+            text-decoration: none;
+            color:blue ;
+            margin: auto;
+            padding: 10px;
+            font-size: 20px;
+            margin-left: 150px;
+        }
+        @media all and (min-width:500px) and (max-width:899px){
+            #bowls_top {
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+            }
+        }
+        @media all and (min-width:120px) and (max-width:499px){
+            #bowls_top {
+                display: grid;
+                grid-template-columns: repeat(1,1fr);
+            }
+        }
+       </style>
 </head>
 <body>
     <nav>
         <div><a href="bowls.html"><b>Bowls</b></a></div>
         <div><a href="pollo.html"><b>Pollo Fit Menu</b></a></div>
         <div><a href="streettacos.html"><b>Street Tacos</b></a></div>
-        <div><a href="kidsmeals.html"><b>Kids Meals</b></a></div>
+        
     </nav>
      <!-- screenshot image -->
      <div id="image">
@@ -21,35 +76,43 @@
      <!-- midsection  -->
     <!-- midsection  -->
     <div id="bowls">
-        <h1>CHICKEN BOWLS</h1>
+        <h1>Pollo Fit Menu</h1>
     </div>
     <div id="bowls_top">
-    <div class="top">
-        <div>
-            <div><img src="https://www.elpolloloco.com/content/img/menu/M2-DblChickAvoSalad-761x561.webp">
-            </div>
-        <div><img src="https://www.elpolloloco.com/content/img/menu/M5-ChickenKetoBurrito-761x561.webp">
+
+
+        <div><img src="https://www.elpolloloco.com/content/img/menu/M2-DblChickAvoSalad-761x561.jpg">
+            <h1>Double Chicken Avocado Salad</h1>
+            <a href="file:///C:/Users/dell/Desktop/Original%20Meals.pdf">Nutrition Info</a>
+        </div>
+        <div><img src="https://www.elpolloloco.com/content/img/menu/M5-ChickenKetoBurrito-761x561.jpg">
+
+            <h1>The World's First Keto Burrito</h1>
+            <a href="file:///C:/Users/dell/Desktop/Original%20Meals.pdf">Nutrition Info</a>
         </div>
         <div>
-            <img src="https://ohsofoodie.com/wp-content/uploads/2021/06/homemade-keto-chipotle-bowl-1-scaled.jpg"></div>
-            <div id="c"><h1>Double Chicken Avocado Salad</h1>
-            <a href="file:///C:/Users/dell/Desktop/Original%20Meals.pdf">Nutrition Info</a></div>
-            
-        <div id="c"><h1>Chicken Kbab Role </h1>
-            <a href="file:///C:/Users/dell/Desktop/Original%20Meals.pdf">Nutrition Info</a></div>
-            <div id="c"><h1>Grande Avocado Chicken Salad</h1>
-                <a href="file:///C:/Users/dell/Desktop/Original%20Meals.pdf">Nutrition Info</a></div>
-            <div><img src="https://www.elpolloloco.com/content/img/menu/OriginalPolloBowl_M6_2019_761X561.webp"></div>
-        <div><img src="https://www.elpolloloco.com/content/img/menu/M1-BeefGrillerswDip-761x561.jpg"></div>
-        <div id="c"></div>
-       <div id="c"><h1>The World's First Keto Burrito™</h1>
-    <a href="file:///C:/Users/dell/Desktop/Original%20Meals.pdf">Nutrition Info</a></div>
-        <div id="c"><h1>Grande Avocado salad</h1>
-    <a href="file:///C:/Users/dell/Desktop/Original%20Meals.pdf">Nutrition Info</a></div>
-       </div> 
+            <img src="https://www.elpolloloco.com/content/img/menu/M3-DblChickenTostada-761x561.webp">
+            <h1>Double Chicken Tostada Salad </h1>
+            <a href="file:///C:/Users/dell/Desktop/Original%20Meals.pdf">Nutrition Info</a>
+        </div>
+
+
+
+        <div><img src="https://www.elpolloloco.com/content/img/menu/OriginalPolloBowl_M6_2019_761X561.webp">
+
+            <h1>Grande Avocado Chicken Bowl</h1>
+            <a href="file:///C:/Users/dell/Desktop/Original%20Meals.pdf">Nutrition Info</a>
+        </div>
+        <div><img src="https://www.elpolloloco.com/content/img/menu/GrandeAvocadChickenBowl_M6_2019_761X561.webp">
+            <h1>Double Chicken Bowl</h1>
+            <a href="file:///C:/Users/dell/Desktop/Original%20Meals.pdf">Nutrition Info</a>
+        </div>
+
+
+
+
     </div>
-    </div>
-    </div>
+
     <div id="order">
         
         <div><img src="https://www.elpolloloco.com/content/img/order-now_1280.webp"></div>

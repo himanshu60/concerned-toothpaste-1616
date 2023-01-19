@@ -1,67 +1,150 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="nav.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <style>
+        #bowls_top {
+            width: 100%;
+            height: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 30px;
+            margin: auto;
+            padding: 10px;
+            background-color: ivory;
+            margin-bottom: 60px;
+        }
+
+        #bowls_top>div {
+            gap: 50px;
+            margin: auto;
+            padding: 10px;
+        }
+
+        #bowls_top>div>img {
+            width: 90%;
+            height: 60%;
+            margin: auto;
+            padding: 10px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+            border-radius: 10px;
+        }
+
+        #bowls_top>div>h1 {
+            font-style: italic;
+            text-align: center;
+            border: 10px #F5F5F5;
+            border-radius: 10px;
+        }
+
+        #bowls_top>div>a {
+            text-decoration: none;
+            color:blue ;
+            margin: auto;
+            padding: 10px;
+            font-size: 20px;
+            margin-left: 150px;
+        }
+       
+        @media all and (min-width:500px) and (max-width:899px){
+            #bowls_top {
+                display: grid;
+                grid-template-columns: repeat(2,1fr);
+            }
+            #bowls_top>div>h1 {
+            text-align: center;
+        }
+        #bowls_top>div>a{
+            margin-left: 50px;
+        }
+        }
+        @media all and (min-width:120px) and (max-width:499px){
+            #bowls_top {
+                display: grid;
+                grid-template-columns: repeat(1,1fr);
+            }
+            #bowls_top>div>h1 {
+            text-align: center;
+        }
+        #bowls_top>div>a{
+            margin-left: 50px;
+        }
+        }
+    </style>
+
 </head>
+
 <body>
     <nav>
         <div><a href="bowls.html"><b>Bowls</b></a></div>
         <div><a href="pollo.html"><b>Pollo Fit Menu</b></a></div>
         <div><a href="streettacos.html"><b>Street Tacos</b></a></div>
-        <div><a href="kidsmeals.html"><b>Kids Meals</b></a></div>
-    </nav>
 
+    </nav>
     <!-- screenshot image -->
     <div id="image">
-      
+
     </div>
+
     <!-- midsection  -->
     <div id="bowls">
         <h1>CHICKEN BOWLS</h1>
     </div>
     <div id="bowls_top">
-    <div class="top">
-        <div>
-            <div><img src="https://www.elpolloloco.com/content/img/menu/OriginalPolloBowl_M6_2019_761X561.webp">
-            </div>
+
+
+        <div><img src="https://www.elpolloloco.com/content/img/menu/OriginalPolloBowl_M6_2019_761X561.webp">
+            <h1>Original Pollo Bowls</h1>
+            <a href="file:///C:/Users/dell/Desktop/Original%20Meals.pdf">Nutrition Info</a>
+        </div>
         <div><img src="https://www.elpolloloco.com/content/img/menu/GrandeAvocadChickenBowl_M6_2019_761X561.webp">
+
+            <h1>Chicken Bowl</h1>
+            <a href="file:///C:/Users/dell/Desktop/Original%20Meals.pdf">Nutrition Info</a>
         </div>
         <div>
-            <img src="https://www.elpolloloco.com/content/img/menu/DoubleChickenBowl_M6_2019_761X561.webp"></div>
-            <div id="c"><h1>Original Pollo Bowls</h1>
-            <a href="file:///C:/Users/dell/Desktop/Original%20Meals.pdf">Nutrition Info</a></div>
-            
-        <div id="c"><h1>Chicken Bowl</h1>
-            <a href="file:///C:/Users/dell/Desktop/Original%20Meals.pdf">Nutrition Info</a></div>
-            <div id="c"><h1>Grande Avocado Chicken Bowl</h1>
-                <a href="file:///C:/Users/dell/Desktop/Original%20Meals.pdf">Nutrition Info</a></div>
-            <div><img src="https://www.elpolloloco.com/content/img/menu/OriginalPolloBowl_M6_2019_761X561.webp"></div>
-        <div><img src="https://www.elpolloloco.com/content/img/menu/GrandeAvocadChickenBowl_M6_2019_761X561.webp"></div>
-        <div id="c"></div>
-       <div id="c"><h1>Double Chicken Bowl</h1>
-    <a href="file:///C:/Users/dell/Desktop/Original%20Meals.pdf">Nutrition Info</a></div>
-        <div id="c"><h1>Grande Avocado </h1>
-    <a href="file:///C:/Users/dell/Desktop/Original%20Meals.pdf">Nutrition Info</a></div>
-       </div> 
-    </div>
-    </div>
+            <img src="https://www.elpolloloco.com/content/img/menu/DoubleChickenBowl_M6_2019_761X561.webp">
+            <h1>Grande Avocado </h1>
+            <a href="file:///C:/Users/dell/Desktop/Original%20Meals.pdf">Nutrition Info</a>
+        </div>
+
+
+
+        <div><img src="https://www.elpolloloco.com/content/img/menu/OriginalPolloBowl_M6_2019_761X561.webp">
+
+            <h1>Grande Avocado Chicken Bowl</h1>
+            <a href="file:///C:/Users/dell/Desktop/Original%20Meals.pdf">Nutrition Info</a>
+        </div>
+        <div><img src="https://www.elpolloloco.com/content/img/menu/GrandeAvocadChickenBowl_M6_2019_761X561.webp">
+            <h1>Double Chicken Bowl</h1>
+            <a href="file:///C:/Users/dell/Desktop/Original%20Meals.pdf">Nutrition Info</a>
+        </div>
+
+
+
+
     </div>
 
+
     <div id="order">
-        
+
         <div><img src="https://www.elpolloloco.com/content/img/order-now_1280.webp"></div>
         <div>
-        <h1>PERFECT POLLO IS JUST A CLICK AWAY</h1>
-        <h3>Order Online for quick pick up or delivery where</h3>
-        <h3>available</h3>
+            <h1>PERFECT POLLO IS JUST A CLICK AWAY</h1>
+            <h3>Order Online for quick pick up or delivery where</h3>
+            <h3>available</h3>
             <button><a href="#">ORDER NOW</a></button>
-    
-        
-        
-    </div>
-    
+        </div>
+
+
+
+        <!-- footer -->
+
 </body>
+
 </html>
