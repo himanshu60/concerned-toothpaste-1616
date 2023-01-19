@@ -1,0 +1,148 @@
+span , p{
+    color: #cfc3ca;
+     font-size: 15px;
+      font-weight: 400;
+   }
+h1{
+    font-size: 1.6rem;
+     color: #fff;
+     
+}
+
+
+body{
+    font-family: NotoSansBold,sans-serif;
+    background: #0f0617;
+
+
+}
+#box {
+    height: 550px;
+    width: 30%;
+    margin: auto;
+    margin-top: 80px;
+    text-align: center;
+
+
+}
+    
+img{ 
+    border-radius: 50%;
+    margin-top: 20px;
+   
+    margin-left: 15px;
+    
+}
+a{
+    text-decoration: none;
+}
+::placeholder{
+    color: #fff;
+}
+#box > #or{
+    
+/* background: rgba(129, 4, 4, 0.781); */
+border-radius: 50%;
+height: 30px;
+width: 30px;
+color: #fff;
+box-sizing: border-box;
+margin:auto;
+margin-top: 25px;
+margin-bottom: 35px;
+text-align: center;
+
+padding: 7px;
+
+}
+input{
+    background-color: transparent;
+    border: none;
+    margin-top: 10px;
+    outline: none;
+    resize: none;
+    color: aqua;
+    margin-left: -180px;
+    width: 400px;
+  
+    margin-left: 25px;
+}
+#top{
+    color: #cfc3ca;
+    font-size: 15px;
+      font-weight: 400;
+     margin-left: -180px;
+
+}
+
+#top1{
+        color: #cfc3ca;
+        font-size: 15px;
+      font-weight: 400;
+      margin-left: -225px;
+}
+
+.line {
+    width: 86%;
+    margin: auto;
+    height: 1px;
+    background: red;
+}
+button{
+    background-color: transparent;
+    width: 200px;
+    text-align: center;
+    color: #cfc3ca;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+@media all and (min-width:381px) and (max-width:900px){
+    #fang{
+        width: 50px;
+        height: 50px;
+    }
+    #box {
+        margin: auto;
+        width: 45%;
+    }
+    p{
+        font-size: 10px;
+    }
+    #top  {
+       margin-left: -90px;
+    }
+    #top1 {
+        margin-left: -130px;
+    }
+   
+}
+@media all and (min-width:50px) and (max-width:380px){
+    .fang img{
+       display: none;
+    }
+    #box {
+        width: 100%;
+        margin: auto;
+    }
+    #box img {
+        height: 10px;
+        width: 10px;
+    }
+    #top {
+     margin-left: 50px;
+    }
+    #top1 {
+       margin-left: 50px;
+    }
+    #loginhead{
+        font-size: 14px;
+        margin-top: 50px;
+    }
+    #desc{
+        font-size: 12px;
+        width: 80%;
+        text-align: center;
+        margin: auto;
+    }
+}

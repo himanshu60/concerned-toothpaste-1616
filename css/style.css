@@ -133,7 +133,7 @@ header .icons #menu-bars{
     align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
-    /* padding-top: 9rem; */
+    padding-top: 9rem;
 }
 .home .home-slider .slide .content{
     flex:1 1 45rem;
@@ -289,8 +289,9 @@ header .icons #menu-bars{
 /* order */
 #order{
     border:0px solid black;
-    height:800px;
-    width:1500px;
+    height:auto;
+    
+    width:100%;
     margin:auto;
     background-color:#F5F5F5;
     border:0px solid black;
@@ -337,7 +338,7 @@ font-size:20px;
 
 }
 #order>div>button:hover{
-    background-color:orangered;
+    background-color:rgb(19, 194, 48);
 }
 #order>div>button{
     border-radius: 20px;
@@ -350,3 +351,8 @@ font-size:20px;
 text-align:center;
 
 }
+
+
+/* other css */
+
+
