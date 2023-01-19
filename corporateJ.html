@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOB SECTION</title>
+    <style>
+        #Job-Wrapper{
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap:10px;
+        }
+        .cup{
+            border:1px solid black;
+            width:40%;
+            margin:auto;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="Job-Wrapper"></div>
+</body>
+<script>
+    let JobWrapper = document.getElementById("Job-Wrapper");
+    fetch("https://6398026577359127a044d598.mockapi.io/data")
+    .then((resul)=>{resul.json().then((a)=>{
+        console.log(a);
+        let b = a;
+        b = b.map(element => {
+          return  `<div class="cup">
+            <h2>${element.Job_Title}</h2>
+            <p>${element.Job_Type}</p>
+            <p>${element.Location}</p>
+            <p>$ ${element.Salary}</p>
+                </div>`
+        });
+    
+        JobWrapper.innerHTML = (b.join(" "))
+    })})
+</script>
+</html>
+<div class="cup"></div>

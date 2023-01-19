@@ -10,12 +10,15 @@
             width:100%;
             height: 100vh;
         }
-        .path, #freshO h1, #Developed h1, #caree h1{
+        .path, #freshO h1, #Developed h1, #caree h1, .corporate h1{
             font-family: luchadoroblique - 400 italic;
             color:#fe3b1f;
             font-size: 45px;
             font-weight: 400;
             font-style: italic;
+        }
+        .path{
+            margin-top :30px;
         }
         .apath{
             font-family: gringoregular - 400;
@@ -98,9 +101,26 @@
           content: '\002B';
         }
         #benefits{
-          /* width:80%; */
-          margin:auto;
-          border:1px solid red;
+          width:50%;
+          text-align: center;
+          margin:50px auto 0 auto;
+          /* border:1px solid red; */
+        }
+        #Layer_1{
+          font-size: 5px;
+        }
+        .benefits-list{
+          margin:10px auto 20px 400px;
+          width:50%;
+        }
+        .corporate{
+          width:50%;
+          margin:auto auto 100px auto;
+          text-align: center;
+        }
+        .insidenav{
+          width:70%;
+          margin:auto 10% auto 20%;
         }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -114,6 +134,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>     -->
 </head>
 <body>
+
+    <!-Navbar starts here-  -->
+    <nav class="navbar sticky-top navbar-dark" style="background-color:#00269a;">
+      <div class="insidenav">
+        <a class="navbar-brand" href="#tomato">Restaurant Jobs</a>
+        <a class="navbar-brand" href="#corporate">Corporate Jobs</a>
+        <a class="navbar-brand" href="#Developed">Why Yummy Plates</a>
+        <a class="navbar-brand" href="#freshO">Career Path Options</a>
+        <a class="navbar-brand" href="#benefits">Benefits</a>
+
+      </div>
+    </nav>
+    <!-- Navbar end -->
     <div class="picture"><img src="./chef.png" alt="ERROR"></div>
 
     <!-- YOUR PATH BEGINS HERE -->
@@ -126,11 +159,11 @@
     <!-- END OF YOUR PATH -->
 
     <!-- EXPLORE CARRERS STARTS HERE -->
-    <div class="tomato"><img src="https://www.elpolloloco.com/content/img/explore-jobs_1280.webp" alt="ERROR">
+    <div id="tomato" class="tomato"><img src="https://www.elpolloloco.com/content/img/explore-jobs_1280.webp" alt="ERROR">
         <div class="tomatotext d-grid gap-2 d-md-block">
             <h1>Explore Careers</h1>
-            <button class="btn btn-primary" type="button">Restaurant Jobs</button>
-            <button class="btn btn-primary" type="button">Corporate Jobs</button>
+            <button id="RJ" class="btn btn-primary" type="button">Restaurant Jobs</button>
+            <button id="CJ" class="btn btn-primary" type="button">Corporate Jobs</button>
           </div>
     </div>
     <!-- EXPLORE CARRERS ENDS HERE -->
@@ -239,13 +272,13 @@
                   <div class="card">
                     <div class="card-header" id="headingFour">
                       <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
                          GENERAL MANAGER
                         </button>
                       </h2>
                     </div>
-                
-                    <div id="collapseFour" class="collapse show" aria-labelledby="headingFour" data-parent="#accordionExample">
+              
+                    <div id="collapseFour" class="collapse " aria-labelledby="headingFour" data-parent="#accordionExample">
                       <div class="card-body">
                         If you’re a strong leader with a talent for creating extraordinary restaurant success, then look no further than our General Manager position. As a General Manager at El Pollo Loco, you can taste the rewards of managing a million-dollar-plus business while leading and coaching a team of up to 40 employees. From the people to the overall restaurant operations, you run the whole show.                    </div>
                   </div>
@@ -266,17 +299,44 @@
  <!-- collapse end -->
             </div>
         </div>
-    </div>
+      </div>
+        </div>
+        </div>
     <!-- POSITIONS WE OFFER END -->
     
     <!-- EMPLOYEE BENEFITS START HERE -->
     <div id="benefits">
       <h1 >Employee Benefits</h1>
-      <h4>We are proud to offer a full suite of health and retirement benefits to our full-time employees, with part-time employees becoming eligible after a certain period.</h4>
+      <h5>We are proud to offer a full suite of health and retirement benefits to our full-time employees, with part-time employees becoming eligible after a certain period.</h5>
+      <img src="./careerimages/medical.png" alt="">
     </div>
+    <ul class="benefits-list">
+      <li>Discounts on El Pollo Loco food</li>
+      <li>Discounts on theme parks, movie tickets, sports, hotels and more</li>
+      <li>Employee referral bonuses</li>
+      <li>Education reimbursement</li>
+      <li>Safety awards</li>
+      <li>Ongoing development</li>
+      <li>Payroll Direct Deposit</li>
+      </ul>
+      </li>
+    </ul>
     <!-- EMPLOYEE BENEFITS END HERE -->
-</body>
 
+    <!-- JOIN OUR CORPORATE FAMILIA -->
+    <div id="corporate" class="corporate">
+      <h1>JOIN OUR CORPORATE FAMILIA</h1>
+      <p>Our restaurants are only the tip of the flame. We have a robust and dedicated workforce specializing in everything from operations, to cuisine, to marketing. If you’re looking for a fast paced, innovative and welcoming workplace then a career with our Corporate Familia is right for you.</p>
+      <button type="button" class="btn btn-primary btn-lg">Search opportunities</button>
+    </div>
+    <!-- END OF CORPORATE FAMILIA -->
+
+
+    <!-- trying to impose code -->
+    <div><img src="./careerimages/ft.png" alt=""></div>
+    <!-- end of that -->
+</body>
+<script src="./careers/careers.js"></script>
 <!-- check here -->
 
 </html>
