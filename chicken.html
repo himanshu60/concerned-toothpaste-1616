@@ -6,38 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chicken</title>
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/style.css">
     
     <style>
         *{
             padding:0px;
             margin:0px;
         }
-        /*footer*/
-        #footer{
-    height: auto;
-    background-color: #00269a;
-    font-size: 17px;
-    width: 100%;
-    margin: auto;
-    padding: 5px 50px 5px 50px;
-    
-    
-}
+      
         /*nav-bar*/
         
-         #nav{
-            width:100%;
-            height:6%;
-            border:3px solid black;
-            margin:auto;
-            padding:10px 0px;
-            padding-top:20px;
-            display:flex;
-            justify-content:space-evenly;
-            background-color:#00008B;
-            border:none;
-            position:fixed;
-        }
+        #nav {
+    width: 100%;
+    height: 72px;
+    margin: auto;
+    padding: 10px 0px 0px 10px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #00008B;
+    border: none;
+    margin-top: 76px;
+    position: -webkit-sticky;
+}
         #nav>div a{
             text-decoration:none;
             color:white;
@@ -195,18 +186,33 @@ margin:auto;
     </style>
 </head>
 <body>
+    <header>
+        <a href="#" class="logo"><i class="fas fa-utensils"></i><img src="./images/yummy plates.jpeg" alt=""></a>
+        <nav class="navbar">
+            <a href="./index.html" class="active">home</a>
+            <a href="#dishes">dishes</a>
+            <a href="#about">about</a>
+            
+            <a href="./favourite.html">Favourite</a>
+            <a href="#order">order</a>
+            <a href="./Login.html">LogIn</a>
+            <a href="./Signin.html">SignUp</a>
+
+        </nav>
+        
+    </header>
     <!--navigation-bar-->
 <div id="nav">
     <div>
     <a href="">ALL</a></div>
-    <div><a href="">BURRITOS</a></div>
+    <div><a href="./bowls.html">BOWLS</a></div>
     <div><a href="family.html">FAMILY DINNERS</a></div>
     <div><a href="chicken.html">CHICKEN MEALS</a></div>
-    <div><a href="">FIRE GRILLED COMBOS</a></div>
-    <div><a href="">TOSTADAS</a></div>
+    <div><a href="./pollo.html">POLLO FIT</a></div>
+    <div><a href="./sides.html">SIDES,DRINKS</a></div>
     <div><a href="bowls.html">BOWLS</a></div>
     <div><a href="extra.html">EXTRA</a></div>
-    <div><a href="">STREET TACOS</a></div>
+    <div><a href="./streettacos.html">STREET TACOS</a></div>
 </div>
 <!--top-pic-section-->
 
