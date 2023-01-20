@@ -9,7 +9,7 @@ nav {
     display: flex;
     justify-content: space-evenly;
     background-color: blue;
-
+    margin-bottom: 10px;
 
 }
 
