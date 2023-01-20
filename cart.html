@@ -1,0 +1,460 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+body {
+    background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+background-attachment: fixed;
+  background-repeat: no-repeat;
+
+    font-family: 'Vibur', cursive;
+/*   the main font */
+    font-family: 'Abel', sans-serif;
+opacity: .95;
+/* background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%); */
+}
+     a{
+        color: black;
+    }
+    a:hover{
+        color: orangered;
+    }
+        /* append data */
+        .heading{
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+h1 > span{
+    color: orangered;
+    font-family: playfair display;
+  }
+.searchSection >h1{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: playfair display;
+}
+.foodShow >h1{
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    font-family: playfair display;
+}
+#search{
+    width: 20rem;
+    height: 50px;
+    border: 1px solid orangered;
+    border-radius: 25px;
+    padding-left: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-right: 10px;
+    padding-left: 15px;
+    font-family: playfair display;
+    color: orangered;
+    
+}
+
+#searchBtn{
+    font-size: 22px;
+    font-weight: bold;
+    background: orangered;
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+#other{
+    margin-left: 20px;
+    cursor: pointer;
+}
+#searchBtn:hover{
+    background: #fff;
+    color: orangered;
+}
+
+#show{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 25px;
+    margin-top: 20px;
+}
+
+.foodShow{
+    width: 80%;
+    margin: auto;
+}
+#show > div{
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+#show >div:hover{
+   
+    transform: scale(1.05);
+}
+#show > div img{
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+#show > div >.text,#show > div >.price{
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+    align-items: center;
+    margin: 10px;
+}
+#show > div >.text > p:nth-child(2){
+    font-size: 20px;
+    font-weight: bold;
+    color: orangered;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#show > div >.text > p:nth-child(2):hover{
+    transform: scale(1.2);
+}
+
+
+#show > div >.price{
+    font-size: 18px;
+    font-weight: bold;
+    color: orangered;
+    
+}
+
+
+#show > div >.price button{
+    background: orangered;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+#show > div >.price button:hover{
+    transform: scale(1.2);
+}
+.likeshow{
+    width: 40%;
+    margin: auto;
+  
+}
+.likeshow > div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    border-radius: 10px ;
+    margin-bottom: 20px;
+}
+
+.likeshow > div > img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    object-fit: cover;
+}
+
+.likeshow > div > button{
+    border: none;
+    color: red;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.likeshow > div > button:hover{
+    transform: scale(1.2);
+}
+.likeshow > div >div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content:center;
+    align-items: center;
+}
+
+sup{
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 3px 5px;
+    border-radius: 50%
+}
+
+/* .notification{
+
+    /* display: none; */
+/* } */ 
+.notifDiv{
+    position: fixed;
+    top: 1%;
+    right: 1%;
+    background-color: rgb(216, 248, 215);
+    color: black;
+    font-size:15px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 3px;
+    padding: 10px;
+    z-index: 9;
+    display: none;
+    border-left:5px solid green;
+}
+.notifDiv >div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    
+}
+#contain{
+    display: grid;
+    grid-template-columns: repeat(200px, 1fr);
+    gap: 5%;
+    width: 95%;
+    margin: auto;
+}
+
+.wallet{
+    width: 300px;
+    height: auto;
+    padding: 25px 0;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-top: 8%;
+
+}
+.wallet > .showMoney{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+ 
+}
+.wallet input{
+    width: 80%;
+    height: 50px;
+    margin: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding-left: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-right: 10px;
+    padding-left: 15px;
+    font-family: playfair display;
+    color: #000;
+}
+.wallet button{
+    background: orangered;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#totalDiv{
+    width: 40%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    border-radius: 10px ;
+    margin-bottom: 20px;
+    background-color: rgba(0, 255, 255, 0.808);
+}
+#totalDiv >p{
+    font-size: 20px;
+    font-weight: bold;
+    color: orangered;
+}
+#totalDiv >p > span{
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(20, 20, 20);
+}
+#totalDiv > a{
+    background: orangered;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    
+}
+#add{
+    margin-top: -20px;
+}
+#totalDiv > a > i{
+    font-size: 20px;
+    color: rgb(62, 11, 145);
+}
+
+
+#st{
+    position: absolute;
+    right: 10%;
+    font-size: 20px;
+    font-weight: 500
+}
+#stWallet{
+    color: orangered;
+}
+
+
+
+    </style>
+</head>
+
+<body>
+
+  
+    <div id="header" ></div>
+
+    <div id="st">Wallet : <span id="stWallet"></span></div>
+   <div class="heading"> <h1>Your <span>Cart Food</span> </h1></div>
+
+
+    <div class="likeshow"></div>
+    <div id="totalDiv"><p> Total Price: <span id="total">10 </span></p>
+    <a id="checkbtn">CheckOut <i class="fa-solid fa-rocket"></i></a> 
+</div>
+</body>
+<script>
+      let data = JSON.parse(localStorage.getItem('cardData'))
+    
+    console.log(data)
+    showData(data)
+    function showData(data){
+       data.map(function(el,index){
+        
+            let div = document.createElement('div');
+            
+
+            let img = document.createElement('img');
+            img.src = el.img;
+
+            let div2 = document.createElement('div');
+            let p = document.createElement('h3');
+            p.innerHTML = el.name;
+
+            let price = document.createElement('h3');
+            price.innerHTML =`<i class="fa-solid fa-rupee-sign"></i> ${ el.price} `;
+
+            div2.append(p,price)
+         
+    
+
+            let btn = document.createElement('button');
+            btn.innerHTML =`<i class="fa-solid fa-trash"></i>`
+            btn.addEventListener("click", function(){
+                data.splice(index,1);
+                localStorage.setItem('cardData',JSON.stringify(data));
+                div.remove();
+                window.location.reload();
+
+              
+                
+            })
+
+
+            div.append(img,div2,btn)
+            if(index%2==0){
+               div.style.backgroundColor = '#fff1f1';
+           }else{
+                div.style.backgroundColor = 'aliceblue';
+           }
+            document.querySelector('.likeshow').append(div);
+
+        })
+    }
+
+   
+
+    function deleteData(data){
+        filterData = data.filter(function(ele,i){
+            return i !== index;
+        })
+        showData(filterData)
+        localStorage.setItem('filterData',JSON.stringify(filterData));
+    }
+    
+   
+
+
+   
+
+
+    
+ function showTotal(data){
+    let b = 0;
+ let a = data.filter((ele) => {
+   b += +ele.price;
+   
+ })
+ document.getElementById('total').innerHTML = b
+    //var totalprice = data.reduce(function (acc, elem) {
+        //return acc + Number(elem.price);
+       
+//}, 0);
+
+
+
+
+let Wallet = JSON.parse(localStorage.getItem('wallet'))
+document.getElementById('stWallet').innerHTML = Wallet;
+
+
+document.getElementById('checkbtn').addEventListener('click',function(){
+
+    if(totalprice>Wallet){
+        alert('Insufficient Balance')
+    }else{
+        window.location.href = 'checkout.html'
+    }
+
+
+    localStorage.setItem('total',totalprice);
+   
+    
+});
+
+}
+showTotal(data)
+   
+
+
+</script>
+
+    
