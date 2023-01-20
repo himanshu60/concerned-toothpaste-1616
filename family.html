@@ -4,38 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Family Dinner</title>
     <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/style.css">
     
     <style>
         *{
             margin:0px;
             padding:0px;
         }
-        /*footer*/
-        #footer{
-    height: auto;
-    background-color: #00269a;
-    font-size: 17px;
-    width: 100%;
-    margin: auto;
-    padding: 5px 50px 5px 50px;
     
-    
-}
         /*navigation-bar*/
         #nav{
-            width:100%;
-            height:30px;
-            border:0px solid black;
-            margin:auto;
-            padding:10px 0px;
-            padding-top:20px;
-            display:flex;
-            justify-content:space-evenly;
-            background-color:#00008B;
-            border:none;
-            position:fixed;
+            width: 100%;
+    height: 10px;
+    border: 3px solid black;
+    margin: auto;
+    padding: 49px 0px;
+    padding-top: 20px;
+    display: flex;
+    margin-top: 75px;
+    justify-content: space-evenly;
+    background-color: #00008B;
+    border: none;
+    position: -webkit-sticky;
         }
         #nav>div a{
             text-decoration:none;
@@ -73,7 +65,7 @@
         }
         /*heading-section*/
         #family{
-            width:1500px;
+            width:100%;
             margin:auto;
             height:120px;
             border:0px solid blue;
@@ -81,10 +73,12 @@
             padding-top:100px;
         }
         #family h1{
+           
             color:orangered;
             text-align:center;
             font-style:italic;
             font-size:60px;
+            margin-top: -60px
 
         }
         /*main-section-of-grid*/
@@ -185,6 +179,21 @@ margin:auto;
         text-align:center;
        }
     </style>
+    <header>
+        <a href="#" class="logo"><i class="fas fa-utensils"></i><img src="./images/yummy plates.jpeg" alt=""></a>
+        <nav class="navbar">
+            <a href="./index.html" class="active">home</a>
+            <a href="#dishes">dishes</a>
+            <a href="#about">about</a>
+            
+            <a href="./favourite.html">Favourite</a>
+            <a href="#order">order</a>
+            <a href="./Login.html">LogIn</a>
+            <a href="./Signin.html">SignUp</a>
+
+        </nav>
+        
+    </header>
 </head>
 <body>
     <!--navigation-bar-->
@@ -193,13 +202,13 @@ margin:auto;
         <a href="">ALL</a></div>
     
         <div><a href="">BURRITOS</a></div>
-        <div><a href="">FAMILY DINNERS</a></div>
-        <div><a href="">CHICKEN MEALS</a></div>
+        <div><a href="./family.html">FAMILY DINNERS</a></div>
+        <div><a href="./chicken.html">CHICKEN MEALS</a></div>
         <div><a href="">FIRE GRILLED COMBOS</a></div>
         <div><a href="">TOSTADAS</a></div>
-        <div><a href="">BOWLS</a></div>
-        <div><a href="">POLLO FIT MENU</a></div>
-        <div><a href="">STREET TACOS</a></div>
+        <div><a href="./bowls.html">BOWLS</a></div>
+        <div><a href="./pollo.html">POLLO FIT MENU</a></div>
+        <div><a href="./streettacos.html">STREET TACOS</a></div>
     </div>
     <!--image-section-for-top-->
     <div id="top">
