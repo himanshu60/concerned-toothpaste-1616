@@ -6,16 +6,154 @@
     <title>Document</title>
    <link rel="stylesheet" href="nav.css">
        <style>
-          #bowls_top {
+           * {
+            margin: 0%;
+            padding: 0px;
+            position: sticky;
+        }
+
+        #nav {
+            width: 100%;
+            height: 45px;
+            border: 3px solid black;
+            margin: auto;
+            padding: 10px 0px;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-evenly;
+            background-color: #00008B;
+            border: none;
+            position: -webkit-sticky;
+
+
+        }
+
+        #nav>div a {
+            text-decoration: none;
+            color: white;
+            font-size: 22px;
+            padding-top: 100px;
+
+        }
+
+        #nav>div a::after {
+            content: " ";
+            width: 0;
+            height: 3px;
+            background-color: white;
+            display: block;
+            margin: auto;
+        }
+
+        #nav>div a:hover::after {
+            width: 100%;
+            transition: width 0.1s linear;
+        }
+
+        #nav>div a:hover {
+            color: whitesmoke;
+        }
+
+        #nav>div a {
+            font-size: 20px;
+            font-style: italic;
+        }
+
+        /* top img */
+        #top {
+            width: 100%;
+            height: 140px;
+            border: 0px solid red;
+            margin: auto;
+            background-color: #F5F5F5;
+        }
+
+        #top img {
+            height: 140px;
+            width: 100%;
+        }
+
+
+        /* order */
+
+
+        #order{
+            border:0px solid black;
+            height:800px;
+            width:100%;
+            margin:auto;
+            background-color:#F5F5F5;
+            border:0px solid black;
+            display:flex;
+            margin:auto;  
+        }
+        #order>div{
+            
+            height:900px;
+            width:500px;
+            border:0px solid red;
+            
+               
+        }
+        #order>div h1{
+            margin-top:300px;
+            
+            color:orangered;
+            text-align:center;
+            font-style:italic;
+            font-size:45px;
+            margin-bottom:30px;
+        }
+        #order>div h3{
+            text-align:center;
+            font-size:20px;
+        }
+        #order>div>button{
+            margin-left:180px;
+            border-radius:20px;
+            padding-left:20px;
+            padding-right:20px;
+            padding-top:10px;
+            padding-bottom:10px;
+            background-color:#00008B;
+            border:none;
+            margin-top:30px;
+        }
+        #order>div a{
+        text-decoration:none;
+        color:white;
+        font-style:italic;
+        font-size:20px;
+        }
+        #order>div>button:hover{
+            background-color:orangered;
+        }
+        
+        
+        #order>div img{
+            width:300%;
+        }
+       #order>div h3{
+        text-align:center;
+       }
+        /* bowls */
+        #bowls h1 {
+            color: orangered;
+            text-align: center;
+            font-style: italic;
+            font-size: 60px;
+        }
+
+        #bowls_top {
             width: 100%;
             height: auto;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 30px;
             margin: auto;
-            padding: 10px;
-            background-color: ivory;
-            margin-bottom: 60px;
+            background-color: #F5F5F5;
+            padding-top: 10px;
+            padding-bottom: 10px;
         }
 
         #bowls_top>div {
@@ -28,9 +166,10 @@
             width: 90%;
             height: 60%;
             margin: auto;
-            padding: 10px;
-            box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+            padding: 20px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
             border-radius: 10px;
+            margin-bottom: 10px;
         }
 
         #bowls_top>div>h1 {
@@ -42,38 +181,66 @@
 
         #bowls_top>div>a {
             text-decoration: none;
-            color:blue ;
+            color: blue;
             margin: auto;
             padding: 10px;
             font-size: 20px;
-            margin-left: 150px;
+            margin-left: 130px;
+            
         }
-        @media all and (min-width:500px) and (max-width:899px){
+
+        @media all and (min-width:500px) and (max-width:899px) {
             #bowls_top {
                 display: grid;
-                grid-template-columns: repeat(2,1fr);
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            #bowls_top>div>h1 {
+                text-align: center;
+            }
+
+            #bowls_top>div>a {
+                margin-left: 50px;
             }
         }
-        @media all and (min-width:120px) and (max-width:499px){
+
+        @media all and (min-width:120px) and (max-width:499px) {
             #bowls_top {
                 display: grid;
-                grid-template-columns: repeat(1,1fr);
+                grid-template-columns: repeat(1, 1fr);
+            }
+
+            #bowls_top>div>h1 {
+                text-align: center;
+            }
+
+            #bowls_top>div>a {
+                margin-left: 50px;
             }
         }
-       </style>
+    </style>
+
 </head>
+
 <body>
-    <nav>
-        <div><a href="bowls.html"><b>Bowls</b></a></div>
-        <div><a href="pollo.html"><b>Pollo Fit Menu</b></a></div>
-        <div><a href="streettacos.html"><b>Street Tacos</b></a></div>
+    <div id="nav">
+        <div><a href="All.html">ALL</a></div>
+        <div><a href="">BURRITOS</a></div>
+        <div><a href="">FAMILY DINNERS</a></div>
+        <div><a href="">CHICKEN MEALS</a></div>
+        <div><a href="">FIRE GRILLED COMBOS</a></div>
+       
+        <div><a href="bowls.html">BOWLS</a></div>
+        <div><a href="pollo.html">POLLO FIT MENU</a></div>
+        <div><a href="streettacos.html">STREET TACOS</a></div>
         
-    </nav>
-     <!-- screenshot image -->
-     <div id="image">
-      
-     </div>
-     <!-- midsection  -->
+        <div><a href="sides.html">SIDES,DRINKS & SALES</a></div>
+
+
+    </div>
+    <div id="top">
+        <img src="https://www.elpolloloco.com/content/img/hero/Tiles_2.png" alt="">
+    </div>
     <!-- midsection  -->
     <div id="bowls">
         <h1>Pollo Fit Menu</h1>
@@ -121,9 +288,7 @@
         <h3>Order Online for quick pick up or delivery where</h3>
         <h3>available</h3>
             <button><a href="#">ORDER NOW</a></button>
-     
-        
-        
+            </h1> 
     </div>
 </body>
 </html>
