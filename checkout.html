@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food App-Like</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<style>
+
+     a{
+        color: black;
+    }
+    a:hover{
+        color: orangered;
+    }
+</style>
+<body>
+        <!-- <div id="header" ></div>
+        <div class="container">
+            <div class="title">
+                <h2>Food Details Form</h2>
+            </div> -->
+          <div class="d-flex">
+            <form action="" method="" id="form">
+              <label>
+                <span class="fname">First Name <span class="required">*</span></span>
+                <input type="text" id="name" name="fname">
+              </label>
+              <label>
+                <span class="lname">Last Name <span class="required">*</span></span>
+                <input type="text" id="lastname" name="lname">
+              </label>
+
+              <label>
+                <span>Street Address <span class="required">*</span></span>
+                <input type="text" id="adress" name="houseadd" placeholder="House number and street name" required>
+              </label>
+              <label>
+                <!-- <span>&nbsp;</span> -->
+                <!-- <input type="text" name="apartment" placeholder="Apartment, suite, unit etc. (optional)"> -->
+              </label>
+              <label>
+                <span>Town / City <span class="required">*</span></span>
+                <input type="text" id="city" name="city"> 
+              </label>
+              <label>
+                <span>State / County <span class="required">*</span></span>
+                <input type="text" id="country" name="country"> 
+              </label>
+              <label>
+                <span>Postcode / ZIP <span class="required">*</span></span>
+                <input type="text" id="pincode" name="ZIP"> 
+              </label>
+              <label>
+                <span>Phone <span class="required">*</span></span>
+                <input type="tel" id="number" name="number"> 
+              </label>
+              <label>
+                <span>Email Address <span class="required">*</span></span>
+                <input type="email" id="email" name="email"> 
+              </label>
+             
+            </form>
+            <div class="Yorder">
+              <table>
+                <tr>
+                  <th colspan="2">Your order</th>
+                </tr>
+                <tr>
+                  <td>Product Name</td>
+                  <td id="showName">Name</td>
+                </tr>
+                <tr>
+                  <td>Subtotal</td>
+                  <td><i class="fa-solid fa-indian-rupee-sign"></i><span id="showtotalprice"></span></td>
+                </tr>
+                <tr>
+                  <td>Shipping</td>
+                  <td>Free shipping</td>
+                </tr>
+              </table><br>
+              <div>
+                <input type="radio" name="dbt" value="dbt" id="walletCheck" checked> Wallet
+              </div>
+              <p>
+                  This payment will be deducted from your wallet balance.
+              </p>
+              <div>
+                <input type="radio" name="dbt" id="dbt" value="cd"> Cash on Delivery
+              </div>
+              
+
+              <button type="button" id="placeOrder">Place Order</button>
+            </div><!-- Yorder -->
+           </div>
+</body>
+</html>
+<script type="module">
+
+import navbar from './components/navbar.js';
+let header = document.getElementById('header');
+header.innerHTML = navbar();
+</script>
+
+<script>
+    var getTotal = localStorage.getItem('total');
+
+    let data = JSON.parse(localStorage.getItem('cardData'))
+
+    let showName = document.getElementById('showName');
+    if(data.length>1){
+        showName.innerHTML = data[0].name + " "+ "etc.";
+    }else{
+        showName.innerHTML = data[0].name;
+    }
+  
+    
+    let showTotal = document.getElementById('showtotalprice');
+    showTotal.innerHTML = getTotal;
+// --------------------
+// input value
+
+
+
+let order = document.getElementById('placeOrder');
+let detailsArr = JSON.parse(localStorage.getItem('details')) || [];
+order.addEventListener("click",function(){
+
+    
+
+    var form = document.getElementById('form');
+    var name = document.getElementById('name').value;
+    var lastname = document.getElementById('lastname').value;
+    var adress = document.getElementById('adress').value;
+    var city = document.getElementById('city').value;
+    var country = document.getElementById('country').value;
+    var pincode = document.getElementById('pincode').value;
+    var number = document.getElementById('number').value;
+    var email = document.getElementById('email').value;
+
+
+    if(name == "" || lastname == "" || adress == "" || city == "" || country == "" || pincode == "" || number == "" || email == ""){
+        alert("Please fill all the fields");
+    }else{
+    detailsObj={
+        name:name,
+        lastname:lastname,
+        adress:adress,
+        city:city,
+        country:country,
+        pincode:pincode,
+        number:number,
+        email:email
+    }
+    detailsArr.push(detailsObj);
+    // console.log(detailsArr);
+
+    localStorage.setItem('details',JSON.stringify(detailsArr));
+    form.reset();
+    // check wallet checked or not and then send data to server
+    let walletCheck = document.getElementById('walletCheck');
+    let dbt = document.getElementById('dbt');
+    if(walletCheck.checked){
+        console.log("wallet checked");
+        let getTotal = localStorage.getItem('total');
+        let wallet = JSON.parse(localStorage.getItem('wallet'))
+        let total =Number(wallet)-Number(getTotal);
+        localStorage.setItem('wallet',total);
+    }
+
+    alert("Order Successfully");
+    window.location.href = "index.html"
+}
+})
+
+</script>
+

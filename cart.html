@@ -352,13 +352,15 @@ sup{
 </div>
 </body>
 <script>
-      let data = JSON.parse(localStorage.getItem('cardData'))
+   
     
+      let data = JSON.parse(localStorage.getItem('cardData'))
+   
     console.log(data)
     showData(data)
     function showData(data){
        data.map(function(el,index){
-        
+      
             let div = document.createElement('div');
             
 
@@ -379,16 +381,17 @@ sup{
             let btn = document.createElement('button');
             btn.innerHTML =`<i class="fa-solid fa-trash"></i>`
             btn.addEventListener("click", function(){
+                data = JSON.parse(localStorage.getItem('cardData')) || [];
                 data.splice(index,1);
                 localStorage.setItem('cardData',JSON.stringify(data));
                 div.remove();
-                window.location.reload();
+               
 
-              
+                window.location.reload();
                 
             })
 
-
+          
             div.append(img,div2,btn)
             if(index%2==0){
                div.style.backgroundColor = '#fff1f1';
@@ -396,19 +399,20 @@ sup{
                 div.style.backgroundColor = 'aliceblue';
            }
             document.querySelector('.likeshow').append(div);
-
+           
         })
+       
     }
 
    
-
-    function deleteData(data){
-        filterData = data.filter(function(ele,i){
-            return i !== index;
-        })
-        showData(filterData)
-        localStorage.setItem('filterData',JSON.stringify(filterData));
-    }
+  
+    // function deleteData(data){
+    //     filterData = data.filter(function(ele,i){
+    //         return i !== index;
+    //     })
+    //     showData(filterData)
+    //     localStorage.setItem('filterData',JSON.stringify(filterData));
+    // }
     
    
 
@@ -438,14 +442,14 @@ document.getElementById('stWallet').innerHTML = Wallet;
 
 document.getElementById('checkbtn').addEventListener('click',function(){
 
-    if(totalprice>Wallet){
+    if(b>Wallet){
         alert('Insufficient Balance')
     }else{
-        window.location.href = 'checkout.html'
+        window.location.assign("./checkout.html")
     }
 
 
-    localStorage.setItem('total',totalprice);
+    localStorage.setItem('total',b);
    
     
 });
