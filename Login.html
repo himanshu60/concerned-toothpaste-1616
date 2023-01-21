@@ -78,28 +78,32 @@
 </body>
 </html>
 <script>
- var regdUsers = JSON.parse(localStorage.getItem("signUpDetails"));
+ var regdUsers;
+ fetch('https://63ca391fd0ab64be2b4e8c76.mockapi.io/LoginCredientials').then((res)=>res.json()).then((a)=>{
+  regdUsers = a;
   console.log(regdUsers);
+ })
+
 
   function submit2() {
-    
-
+   // console.log(regdUsers)
     var mail = document.querySelector("#mail").value;
     var pass1 =document.querySelector("#pass1").value;
  
-
+    if(mail == "admin" && pass1 == "admin"){
+        window.location.href = "admin.html";
+        return;
+    }
     var flag= false;
     for (var i = 0; i < regdUsers.length; i++) {
-      if (regdUsers[i].email == mail && regdUsers[i].pass == pass1) {
+      if (regdUsers[i].email == mail && regdUsers[i].password == pass1) {
         flag=true;
-
-      } else{
-        flag=false;
-      }
+     
+        localStorage.setItem("id",regdUsers[i].id)
+      } 
     }
     if(flag==true){
-        
-        alert("Login Success");
+        alert("Login Successful");     
         window.location.href="index.html";
     }
     else{

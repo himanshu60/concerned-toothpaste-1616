@@ -385,9 +385,22 @@ sup{
                 data.splice(index,1);
                 localStorage.setItem('cardData',JSON.stringify(data));
                 div.remove();
-               
+            //    ROHAN ADDED CODE HERE
+            let id = localStorage.getItem("id");
+            fetch(`https://63ca391fd0ab64be2b4e8c76.mockapi.io/LoginCredientials/${id}/`).then((res)=>res.json()).then((a)=>{
+           // console.log(a);
 
-                window.location.reload();
+           fetch(`https://63ca391fd0ab64be2b4e8c76.mockapi.io/LoginCredientials/${id}/`,{  method: 'PUT',
+             headers: {
+               'Content-type': 'application/json'
+             },
+             body: JSON.stringify({AddtoCart:data})
+           }).then(()=>{
+            window.location.reload();
+           }) })
+            //END OF ROHAN'S CODE
+
+              
                 
             })
 
