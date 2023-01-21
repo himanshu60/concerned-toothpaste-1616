@@ -173,7 +173,30 @@ order.addEventListener("click",function(){
     }
 
     alert("Order Successfully");
+    // PUSH YOUR DATA IN DATABASE
+    let id = localStorage.getItem("id")
+    console.log(id)
+   fetch(`https://63ca391fd0ab64be2b4e8c76.mockapi.io/LoginCredientials/${id}/`).then((res)=>res.json()).then((a)=>{
+            console.log(a);
+          let cartelem = a.AddtoCart;
+          console.log("carelem is", cartelem)
+          let orders= a.OrderDetails;
+         // orders.push(234)
+          cartelem.forEach((ele)=>{
+            orders.push(ele)
+          })
+          console.log("orders is ",orders)
+           fetch(`https://63ca391fd0ab64be2b4e8c76.mockapi.io/LoginCredientials/${id}/`,{  method: 'PUT',
+             headers: {
+               'Content-type': 'application/json'
+             },
+             body: JSON.stringify({OrderDetails:orders, AddtoCart:[]})
+           }).then(()=>{
+            let a = [];
+    localStorage.setItem("cardData",JSON.stringify(a))
     window.location.href = "index.html"
+           })       })
+
 }
 })
 
