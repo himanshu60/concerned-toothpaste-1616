@@ -5,18 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Careers</title>
-    <link rel="stylesheet" href="./css/style.css">
     <style>
-      *{
-        font-style: oblique;
-      }
         .picture > img{
             width:100%;
             height: 100vh;
         }
-  
         .path, #freshO h1, #Developed h1, #caree h1, .corporate h1{
-          
+            font-family: luchadoroblique - 400 italic;
             color:#fe3b1f;
             font-size: 45px;
             font-weight: 400;
@@ -25,9 +20,12 @@
         .path{
             margin-top :30px;
         }
+        .apath{
+            font-family: gringoregular - 400;
+
+        }
         #path{
             text-align: center;
-            
         }
         .tomato img{
             width:100%;
@@ -121,8 +119,10 @@
           text-align: center;
         }
         .insidenav{
-          width:70%;
-          margin:auto 10% auto 20%;
+          width:90%;
+          margin:auto 5% auto 15%;
+          display:grid;
+          grid-template-columns: repeat(6,1fr);
         }
     </style>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -135,26 +135,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>     -->
 </head>
-<header>
-  <a href="#" class="logo"><i class="fas fa-utensils"></i><img src="./images/yummy plates.jpeg" alt=""></a>
-  <nav class="navbar">
-      <a href="./index.html" class="active">home</a>
-      <a href="#dishes">dishes</a>
-      <a href="#about">about</a>
-      
-      <a href="./favourite.html">Favourite</a>
-      <a href="#order">order</a>
-      <a href="./Login.html">LogIn</a>
-      <a href="./Signin.html">SignUp</a>
-
-  </nav>
-  
-</header>
 <body>
 
     <!-Navbar starts here-  -->
-    <nav class="navbar sticky-top navbar-dark" style="background-color:#00269a;height:60px">
+    <nav class="navbar sticky-top navbar-dark" style="background-color:#00269a;height:75px">
       <div class="insidenav">
+        <a class="navbar-brand" href="./index.html">Home</a>
         <a class="navbar-brand" href="#tomato">Restaurant Jobs</a>
         <a class="navbar-brand" href="#corporate">Corporate Jobs</a>
         <a class="navbar-brand" href="#Developed">Why Yummy Plates</a>
@@ -247,13 +233,13 @@
                   <div class="card">
                     <div class="card-header" id="headingOne">
                       <h2 class="mb-0">
-                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                          TEAM MEMBERS
                         </button>
                       </h2>
                     </div>
                 
-                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
                       <div class="card-body">
                         Our Team Members are the heart and soul of our restaurants. From Service Assistants who prepare our delicious salsas and marinate our famous chicken, to Cashiers who provide customers with the warmest smile they’ll see all day, to our Grill Masters who dedicate themselves to grilling nothing short of the best pollo in town. Each and every one of our Team Member careers plays a meaningful and critical role in the El Pollo Loco family.                      </div>
                     </div>
@@ -350,7 +336,7 @@
 
 
     <!-- trying to impose code -->
-    <div><img src="./careerimages/ft.png" alt=""></div>
+    <div><img src="./careerimages/ft.png" alt="" width="100%"></div>
     <!-- end of that -->
 </body>
 <script src="./careers/careers.js"></script>
