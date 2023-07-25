@@ -192,3 +192,103 @@ footer h4{
         flex-wrap: nowrap;
     }
 }
+
+/* Large Screen - 981px and above */
+@media (min-width: 981px) {
+    .about {
+        width: 80%;
+        margin: 20px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .aboutFooter {
+        width: 80%;
+        margin: 20px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .leftlogo {
+        margin-top: 20px;
+        flex-wrap: nowrap;
+    }
+
+    .logoFooter {
+        flex-wrap: nowrap;
+    }
+}
+
+/* Medium Screen - Between 381px and 980px */
+@media (min-width: 381px) and (max-width: 980px) {
+    .about {
+        width: 80%;
+        margin: 20px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .aboutFooter {
+        width: 80%;
+        margin: 20px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .leftlogo {
+        margin-top: 20px;
+        flex-wrap: nowrap;
+    }
+
+    .logoFooter > h4 {
+        display: none;
+    }
+
+    .leftlogo > h4 {
+        display: none;
+    }
+
+    .leftlogo a {
+        margin-right: 10px;
+    }
+}
+
+/* Small Screen - Up to 380px */
+@media (max-width: 380px) {
+    .about {
+        width: 80%;
+        margin: 20px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .aboutFooter {
+        width: 80%;
+        margin: 20px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .leftlogo {
+        margin-top: 20px;
+        flex-wrap: nowrap;
+    }
+
+    .logoFooter > h4 {
+        display: none;
+    }
+
+    .leftlogo > h4 {
+        display: none;
+    }
+
+    .leftlogo a {
+        margin-right: 10px;
+    }
+}

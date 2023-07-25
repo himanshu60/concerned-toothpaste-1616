@@ -355,4 +355,134 @@ text-align:center;
 
 /* other css */
 
+/* Large Screen - 981px and above */
+@media (min-width: 981px) {
+    section {
+        padding: 2rem 9%;
+    }
+
+    
+
+    .home .home-slider .slide {
+        padding-top: 9rem;
+    }
+
+    .dishes .box-container {
+        grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    }
+    #order {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #order > div {
+        height: 900px;
+        width: 50%;
+    }
+
+    #order > div h1 {
+        margin-top: 300px;
+        font-size: 45px;
+    }
+
+    #order > div h3 {
+        font-size: 20px;
+    }
+
+    #order > div > button {
+        margin-left: 180px;
+        font-size: 20px;
+        padding: 10px 20px;
+    }
+
+    #order > div img {
+        width: 100%;
+    }
+}
+
+/* Medium Screen - Between 381px and 980px */
+@media (min-width: 381px) and (max-width: 980px) {
+    section {
+        padding: 2rem 6%;
+    }
+
+    
+
+    .home .home-slider .slide {
+        padding-top: 7rem;
+    }
+
+    .dishes .box-container {
+        grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+    }
+    #order {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #order > div {
+        width: 80%;
+        height: auto;
+    }
+
+    #order > div h1 {
+        margin-top: 100px;
+        font-size: 35px;
+    }
+
+    #order > div h3 {
+        font-size: 18px;
+    }
+
+    #order > div > button {
+        margin-left: 0;
+        font-size: 18px;
+        padding: 10px 15px;
+    }
+}
+
+/* Small Screen - Up to 380px */
+@media (max-width: 380px) {
+    section {
+        padding: 2rem 4%;
+    }
+
+    
+    .home .home-slider .slide {
+        padding-top: 5rem;
+    }
+
+    .dishes .box-container {
+        grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    }
+    #order {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #order > div {
+        width: 80%;
+        height: auto;
+    }
+
+    #order > div h1 {
+        margin-top: 80px;
+        font-size: 30px;
+    }
+
+    #order > div h3 {
+        font-size: 16px;
+    }
+
+    #order > div > button {
+        margin-left: 0;
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+}
+
+
+/* header */
+
+
 
