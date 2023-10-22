@@ -1,4 +1,4 @@
-# El Pollo Loco's:
+# El Pollo Loco's::
 El Pollo Loco's website is your gateway to a flavorful adventure! Explore the delicious world of Mexican-inspired cuisine right here. With a menu bursting with mouthwatering options like flame-grilled chicken, tasty tacos, and zesty sides, you're in for a treat. So, visit the website, satisfy your cravings, and discover the joy of bold and savoury flavours at El Pollo Loco!
 
 ## Deploy Link: https://lucent-manatee-f90f25.netlify.app/
